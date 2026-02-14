@@ -6,7 +6,7 @@ require('dotenv').config({ path: './api.env' });
 
 // 2. إعدادات الخادم
 const app = express();
-const PORT = 3001;
+const PORT = 10000;
 const AI_API_URL = 'http://localhost:10000/predict';
 
 // 3. تفعيل الإضافات (Middlewares)
@@ -143,7 +143,7 @@ app.post('/scan-email', async (req, res) => {
         res.status(500).json({ error: 'حدث خطأ أثناء معالجة البريد الإلكتروني' });
     }
 });
-
+app.options('/scan-email', cors());
 // تشغيل الخادم
 const server = app.listen(PORT, () => {
     console.log(`الخادم المطور يعمل على المنفذ http://localhost:${PORT}`);
