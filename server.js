@@ -7,7 +7,7 @@ require('dotenv').config({ path: './api.env' });
 // 2. إعدادات الخادم
 const app = express();
 const PORT = 3001;
-const AI_API_URL = 'http://localhost:5000/predict';
+const AI_API_URL = 'http://localhost:10000/predict';
 
 // 3. تفعيل الإضافات (Middlewares)
 app.use(cors());
